@@ -6,31 +6,46 @@ public class Sphere : MonoBehaviour
 {
     public Material normalMaterial;
     public Material selectedMaterial;
-    private static InfoManager infoManager;
-    Renderer renderer;
+    private static SphereManager sphereManager;
+    private Renderer renderer;
+
+    private string sphereCode;    //state name in the current application
 
     void Start()
     {
         renderer = GetComponent<Renderer>();
-        if (infoManager==null)
+        if (sphereManager == null)
         {
-            infoManager = GameObject.FindObjectOfType<InfoManager>();
+            sphereManager = GameObject.FindObjectOfType<SphereManager>();
         }
+    }
+
+    public void setCode(string code)
+    {
+        sphereCode = code;
     }
 
     public void setColorToNormal()
     {
+        if (renderer == null)
+        {
+            renderer = GetComponent<Renderer>();
+        }
         renderer.material = normalMaterial;
     }
 
     public void setColorToSelected()
     {
+        if (renderer == null)
+        {
+            renderer = GetComponent<Renderer>();
+        }
         renderer.material = selectedMaterial;
     }
 
     void OnMouseDown()
     {
-        Debug.Log("Clicked on " + transform.position);
-        infoManager.setSelectedSphere(this);
+        Debug.Log("Clicked on sphere with code:" + sphereCode + "  position:" + transform.position);
+        sphereManager.setSelectedSphere(this);
     }
 }
