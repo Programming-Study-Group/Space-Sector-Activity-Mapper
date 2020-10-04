@@ -372,7 +372,7 @@ MonoBehaviour:
   ySpeed: 500
   yMinLimit: -90
   yMaxLimit: 90
-  distanceMin: 40
+  distanceMin: 30
   distanceMax: 150
   x: 0
   y: 0
@@ -729,7 +729,7 @@ MonoBehaviour:
   ySpeed: 500
   yMinLimit: -90
   yMaxLimit: 90
-  distanceMin: 40
+  distanceMin: 30
   distanceMax: 150
   x: 0
   y: 0
