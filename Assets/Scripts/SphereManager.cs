@@ -89,23 +89,51 @@ public class SphereManager : MonoBehaviour
         List<string[]> data = dataReader.readData(selectedSphere.getCode());
 
         string dataString = "";
-        //0da proposal
-        //1business official
-        //2 email/contact
-        //3 phase
-        //4 firma
-        //5 award amount
-        //6 mission directorate
-        //7 center
-
         foreach (string[] strs in data)
         {
-            string line = "";
-            foreach (string str in strs)
+            string oneData = "";
+            for (int i=0; i<strs.Length; i++)
             {
-                line += str + " ";
+                if (strs[i].Length==0)
+                {
+                    continue;
+                }
+
+                if (i==0)
+                {
+                    oneData += "PROPOSAL: " + strs[0];
+                } 
+                else if (i==1)
+                {
+                    oneData += "BUSINESS OFFICIAL: " + strs[1];
+                }
+                else if (i==2)
+                {
+                    oneData += "EMAIL: " + strs[2];
+                }
+                else if (i==3)
+                {
+                    oneData += "PHASE: " + strs[3];
+                }
+                else if (i==4)
+                {
+                    oneData += "FIRM: " + strs[4];
+                }
+                else if (i==5)
+                {
+                    oneData += "AWARD AMOUNT: " + strs[5];
+                }
+                else if (i==6)
+                {
+                    oneData += "MISSION DIRECTORATE: " + strs[6];
+                }
+                else if (i==7)
+                {
+                    oneData += "CENTER: " + strs[7];
+                }
+                oneData += "\n";
             }
-            dataString += line + "\n\n";
+            dataString += oneData + "\n";
         }
         dataDisplay.text = dataString;
         dataNameDisplay.text = selectedSphere.getCode();
