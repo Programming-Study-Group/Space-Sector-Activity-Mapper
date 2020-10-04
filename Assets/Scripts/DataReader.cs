@@ -7,7 +7,7 @@ public class DataReader : MonoBehaviour
 {
     void Start()
     {
-
+        readData("YearStateCSVs/1983Alabama.csv");
     }
 
 
