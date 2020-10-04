@@ -17,17 +17,12 @@ public class DataReader : MonoBehaviour
         {
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
-            string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
-            //Debug.Log("Looking for file: " + fileAddress);
-            using (StreamReader sr = new StreamReader(fileAddress))
+            string fileAddress = "Data/" + year + sphereCode;
+            TextAsset textAsset = (TextAsset)Resources.Load<TextAsset>(fileAddress);
+            string[] lines = textAsset.text.Split('\n');
+            foreach (string line in lines)
             {
-                string line;
-                // Read and display lines from the file until the end of
-                // the file is reached.
-                while ((line = sr.ReadLine()) != null)
-                {
-                    data.Add(line.Split(','));
-                }
+                data.Add(line.Split(','));
             }
         }
         catch (System.Exception e)
@@ -41,19 +36,19 @@ public class DataReader : MonoBehaviour
     public bool fileExists(string sphereCode)   //TODO find a better way to check if file exists
     {
         int year = yearScrollBar.getYear();
-        string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
         try
         {
-            using (StreamReader sr = new StreamReader(fileAddress))
-            {
-                return true;
-            }
+            // Create an instance of StreamReader to read from a file.
+            // The using statement also closes the StreamReader.
+            string fileAddress = "Data/" + year + sphereCode;
+            TextAsset textAsset = (TextAsset)Resources.Load<TextAsset>(fileAddress);
+            return (textAsset!=null);
         }
-        catch
+        catch (System.Exception e)
         {
+            // Let the user know what went wrong.
             return false;
         }
-
     }
 
 }
