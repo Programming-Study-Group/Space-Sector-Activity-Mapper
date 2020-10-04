@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SphereManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SphereManager : MonoBehaviour
 
     public Material selected, normal;
     public DataReader dataReader;
+
+    public Text dataNameDisplay, dataDisplay;
 
     private bool istanbulInitialized = false, statesInitialized = false;
     void Update()
@@ -93,6 +96,7 @@ public class SphereManager : MonoBehaviour
         //getDataOfTheSphere
         List<string[]> data = dataReader.readData(selectedSphere.getCode());
 
+        string dataString = "";
         foreach (string[] strs in data)
         {
             string line = "";
@@ -100,8 +104,11 @@ public class SphereManager : MonoBehaviour
             {
                 line += str + " ";
             }
-            Debug.Log(line);
+            dataString += line + "\n\n";
         }
+        dataDisplay.text = dataString;
+        dataNameDisplay.text = selectedSphere.getCode();
+        
     }
 
     void InitializeSphereWithXYZ(string code, float x, float y, float z)
