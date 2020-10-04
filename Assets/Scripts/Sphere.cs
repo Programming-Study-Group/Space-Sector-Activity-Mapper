@@ -5,13 +5,13 @@ using UnityEngine;
 public class Sphere : MonoBehaviour
 {
     private static SphereManager sphereManager;
-    private Renderer renderer;
+    private Renderer sphereRenderer;
 
     private string sphereCode;    //state name in the current application
 
     void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        sphereRenderer = GetComponent<Renderer>();
         if (sphereManager == null)
         {
             sphereManager = GameObject.FindObjectOfType<SphereManager>();
@@ -30,20 +30,20 @@ public class Sphere : MonoBehaviour
 
     public void setColorToNormal()
     {
-        if (renderer == null)
+        if (sphereRenderer == null)
         {
-            renderer = GetComponent<Renderer>();
+            sphereRenderer = GetComponent<Renderer>();
         }
-        renderer.material = sphereManager.normal;
+        sphereRenderer.material = sphereManager.normal;
     }
 
     public void setColorToSelected()
     {
-        if (renderer == null)
+        if (sphereRenderer == null)
         {
-            renderer = GetComponent<Renderer>();
+            sphereRenderer = GetComponent<Renderer>();
         }
-        renderer.material = sphereManager.selected;
+        sphereRenderer.material = sphereManager.selected;
     }
 
     void OnMouseDown()

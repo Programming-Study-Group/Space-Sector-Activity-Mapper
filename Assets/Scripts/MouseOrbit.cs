@@ -19,7 +19,7 @@ public class MouseOrbit : MonoBehaviour
     public float distanceMin = .5f;
     public float distanceMax = 15f;
 
-    private Rigidbody rigidbody;
+    //private Rigidbody rigidbody;
 
     public float x = 0.0f;
     public float y = 0.0f;
@@ -30,14 +30,15 @@ public class MouseOrbit : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
-
+        /*
         rigidbody = GetComponent<Rigidbody>();
-
+        
         // Make the rigid body not change rotation
         if (rigidbody != null)
         {
             rigidbody.freezeRotation = true;
         }
+        */
     }
 
     void Update()

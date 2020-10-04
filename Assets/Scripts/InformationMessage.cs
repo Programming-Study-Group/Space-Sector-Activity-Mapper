@@ -6,11 +6,11 @@ public class InformationMessage : MonoBehaviour
 {
     public void closeInformationMessage()
     {
-        gameObject.active = false;
+        gameObject.SetActive(false);
     }
 
     public void openInformationMessage()
     {
-        gameObject.active = true;
+        gameObject.SetActive(true);
     }
 }

@@ -18,6 +18,14 @@ public class SphereManager : MonoBehaviour
     void Start()
     {
         //written with Python
+        if (prefab==null)
+        {
+            Debug.LogError("sphere prefab is not defined");
+        }
+        else
+        {
+            Debug.Log("sphere prefab is defined");
+        }
         InitializeSphereWithLongtitudeLattitude("Alaska", -154.493062f, 63.588753f, 20);
         InitializeSphereWithLongtitudeLattitude("Alabama", -86.902298f, 32.318231f, 20);
         InitializeSphereWithLongtitudeLattitude("Arkansas", -91.831833f, 35.20105f, 20);
@@ -71,6 +79,7 @@ public class SphereManager : MonoBehaviour
         InitializeSphereWithLongtitudeLattitude("West Virginia", -80.454903f, 38.597626f, 20);
         InitializeSphereWithLongtitudeLattitude("Wyoming", -107.290284f, 43.075968f, 20);
         checkSpheres();
+        Debug.Log("---Finished creating sphere objects, number of spheres: " + spheres.Count);
     }
 
     public void setSelectedSphere(Sphere newSphere)
@@ -141,17 +150,16 @@ public class SphereManager : MonoBehaviour
 
     public void checkSpheres()
     {
+        int count = 0;
         foreach(Sphere s in spheres)
         {
             bool fileExists = dataReader.fileExists(s.getCode());
-            if (!fileExists)
-            {
-                s.gameObject.active = false;
-            }
-            else
-            {
-                s.gameObject.active = true;
-            }
+            s.gameObject.SetActive(fileExists);
+            count += (fileExists ? 1 : 0);
+        }
+        if (count == 0)
+        {
+            Debug.LogError("No data found");
         }
     }
 

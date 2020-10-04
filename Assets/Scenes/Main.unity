@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160422, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -355,7 +359,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 495495861}
   m_HandleRect: {fileID: 495495860}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -854,7 +858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -229.99998, y: -1500}
+  m_AnchoredPosition: {x: -8.500023, y: -1500.0001}
   m_SizeDelta: {x: 220, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521767912
@@ -889,7 +893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Data
 --- !u!222 &521767913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2591,7 +2595,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 872685715}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.15613888
+  m_Size: 0.15454505
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
