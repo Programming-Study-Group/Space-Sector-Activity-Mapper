@@ -9,7 +9,7 @@ public class Sphere : MonoBehaviour
 
     private string sphereCode;    //state name in the current application
 
-    void Start()
+    void Awake()
     {
         renderer = GetComponent<Renderer>();
         if (sphereManager == null)
@@ -48,7 +48,6 @@ public class Sphere : MonoBehaviour
 
     void OnMouseDown()
     {
-        //Debug.Log("Clicked on sphere with code:" + sphereCode + "  position:" + transform.position);
         sphereManager.setSelectedSphere(this);
     }
 }

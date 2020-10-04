@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 public class DataReader : MonoBehaviour
 {
-    private int year = 1983;    //TODO get year from the bar in unity
     public YearScrollBar yearScrollBar;
-    
-    //void readData(string fileAddress)
+
     public List<string[]> readData(string sphereCode)
     {
-        year = yearScrollBar.getYear();
+        int year = yearScrollBar.getYear();
 
         List<string[]> data = new List<string[]>();
         try
@@ -20,7 +18,7 @@ public class DataReader : MonoBehaviour
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
             string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
-            Debug.Log("Looking for file: " + fileAddress);
+            //Debug.Log("Looking for file: " + fileAddress);
             using (StreamReader sr = new StreamReader(fileAddress))
             {
                 string line;
@@ -39,5 +37,23 @@ public class DataReader : MonoBehaviour
         }
         return data;
     }
-	
+
+    public bool fileExists(string sphereCode)   //TODO find a better way to check if file exists
+    {
+        int year = yearScrollBar.getYear();
+        string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
+        try
+        {
+            using (StreamReader sr = new StreamReader(fileAddress))
+            {
+                return true;
+            }
+        }
+        catch
+        {
+            return false;
+        }
+
+    }
+
 }
