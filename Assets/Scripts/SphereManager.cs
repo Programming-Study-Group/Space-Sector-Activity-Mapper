@@ -89,6 +89,15 @@ public class SphereManager : MonoBehaviour
         List<string[]> data = dataReader.readData(selectedSphere.getCode());
 
         string dataString = "";
+        //0da proposal
+        //1business official
+        //2 email/contact
+        //3 phase
+        //4 firma
+        //5 award amount
+        //6 mission directorate
+        //7 center
+
         foreach (string[] strs in data)
         {
             string line = "";
