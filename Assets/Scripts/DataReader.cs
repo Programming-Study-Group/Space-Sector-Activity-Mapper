@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataReader : MonoBehaviour
 {
     private int year = 1983;    //TODO get year from the bar in unity
-    /*
-    void Start()
-    {
-        readData("YearStateCSVs/1983Alabama.csv");
-    }
-    */
+    public YearScrollBar yearScrollBar;
+    
     //void readData(string fileAddress)
     public List<string[]> readData(string sphereCode)
     {
-        List<string[]> data = new List<string[]>();
+        year = yearScrollBar.getYear();
 
+        List<string[]> data = new List<string[]>();
         try
         {
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
             string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
+            Debug.Log("Looking for file: " + fileAddress);
             using (StreamReader sr = new StreamReader(fileAddress))
             {
                 string line;
@@ -37,7 +36,6 @@ public class DataReader : MonoBehaviour
         {
             // Let the user know what went wrong.
             Debug.Log(e.Message);
-            Debug.Log("There is no such file.");
         }
         return data;
     }

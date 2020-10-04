@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6819404451696778637}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,8 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d82c6ce5fa2d84ca9114598022fd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalMaterial: {fileID: 2100000, guid: 3fd5fb27bada1e8489a887db069a131e, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: d0f756568b723104cafbbf5f2773b75f, type: 2}
 --- !u!135 &6819404451696778637
 SphereCollider:
   m_ObjectHideFlags: 0

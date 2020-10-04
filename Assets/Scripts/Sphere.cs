@@ -48,7 +48,7 @@ public class Sphere : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Clicked on sphere with code:" + sphereCode + "  position:" + transform.position);
+        //Debug.Log("Clicked on sphere with code:" + sphereCode + "  position:" + transform.position);
         sphereManager.setSelectedSphere(this);
     }
 }
