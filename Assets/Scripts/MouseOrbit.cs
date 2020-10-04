@@ -9,7 +9,7 @@ public class MouseOrbit : MonoBehaviour
     public bool tracking = false;
 
     public Transform target;
-    public float distance = 5.0f;
+    public float distance = 3.0f;
     public float xSpeed = 120.0f;
     public float ySpeed = 120.0f;
 

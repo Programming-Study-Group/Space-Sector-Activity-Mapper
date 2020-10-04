@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: 0
   target: {fileID: 896533199}
-  distance: 100
+  distance: 50
   xSpeed: 500
   ySpeed: 500
   yMinLimit: -90
@@ -487,6 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3817252082891674226, guid: adc73d52fe5e44a45813e27f96cc8af8, type: 3}
+  selected: {fileID: 2100000, guid: d0f756568b723104cafbbf5f2773b75f, type: 2}
+  normal: {fileID: 2100000, guid: 3fd5fb27bada1e8489a887db069a131e, type: 2}
 --- !u!4 &1063078527
 Transform:
   m_ObjectHideFlags: 0
@@ -724,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: 0
   target: {fileID: 896533199}
-  distance: 100
+  distance: 50
   xSpeed: 500
   ySpeed: 500
   yMinLimit: -90
