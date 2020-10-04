@@ -7,6 +7,8 @@ public class SphereManager : MonoBehaviour
     private Sphere selectedSphere;
     public Object prefab;
 
+    public Material selected, normal;
+
     private bool istanbulInitialized = false, statesInitialized = false;
     void Update()
     {

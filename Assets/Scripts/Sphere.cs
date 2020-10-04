@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Sphere : MonoBehaviour
 {
-    public Material normalMaterial;
-    public Material selectedMaterial;
     private static SphereManager sphereManager;
     private Renderer renderer;
 
@@ -31,7 +29,7 @@ public class Sphere : MonoBehaviour
         {
             renderer = GetComponent<Renderer>();
         }
-        renderer.material = normalMaterial;
+        renderer.material = sphereManager.normal;
     }
 
     public void setColorToSelected()
@@ -40,7 +38,7 @@ public class Sphere : MonoBehaviour
         {
             renderer = GetComponent<Renderer>();
         }
-        renderer.material = selectedMaterial;
+        renderer.material = sphereManager.selected;
     }
 
     void OnMouseDown()
