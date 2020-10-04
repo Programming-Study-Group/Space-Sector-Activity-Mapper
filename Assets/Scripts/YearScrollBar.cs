@@ -18,7 +18,7 @@ public class YearScrollBar : MonoBehaviour
 	void OnEnable()
 	{
 		bar = this.GetComponent<Scrollbar>();
-		text.text = getYear().ToString();
+		text.text = "Year\n" + getYear().ToString();
 		//Subscribe to the Scrollbar event
 		bar.onValueChanged.AddListener(scrollbarCallBack);
 		lastValue = bar.value;
@@ -29,7 +29,7 @@ public class YearScrollBar : MonoBehaviour
 	{
 		if (lastValue != value)
 		{
-			text.text = getYear().ToString();
+			text.text = "Year\n" + getYear().ToString();
 			sphereManager.checkSpheres();
 		}
 		lastValue = value;
