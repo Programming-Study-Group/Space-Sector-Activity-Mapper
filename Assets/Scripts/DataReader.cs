@@ -5,19 +5,23 @@ using UnityEngine;
 
 public class DataReader : MonoBehaviour
 {
+    private int year = 1983;    //TODO get year from the bar in unity
+    /*
     void Start()
     {
         readData("YearStateCSVs/1983Alabama.csv");
     }
-
-
-    //List<string[]> readData(string fileAddress)
-    void readData(string fileAddress)
+    */
+    //void readData(string fileAddress)
+    public List<string[]> readData(string sphereCode)
     {
+        List<string[]> data = new List<string[]>();
+
         try
         {
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
+            string fileAddress = "YearStateCSVs/" + year + sphereCode + ".csv";
             using (StreamReader sr = new StreamReader(fileAddress))
             {
                 string line;
@@ -25,7 +29,7 @@ public class DataReader : MonoBehaviour
                 // the file is reached.
                 while ((line = sr.ReadLine()) != null)
                 {
-                    Debug.Log(line);
+                    data.Add(line.Split(','));
                 }
             }
         }
@@ -35,6 +39,7 @@ public class DataReader : MonoBehaviour
             Debug.Log(e.Message);
             Debug.Log("There is no such file.");
         }
+        return data;
     }
 	
 }

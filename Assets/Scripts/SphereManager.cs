@@ -8,6 +8,7 @@ public class SphereManager : MonoBehaviour
     public Object prefab;
 
     public Material selected, normal;
+    public DataReader dataReader;
 
     private bool istanbulInitialized = false, statesInitialized = false;
     void Update()
@@ -76,6 +77,33 @@ public class SphereManager : MonoBehaviour
             statesInitialized = true;
         }
     }
+
+    public void setSelectedSphere(Sphere newSphere)
+    {
+        //change color of the previous sphere to normal
+        if (selectedSphere != null)
+        {
+            selectedSphere.setColorToNormal();
+        }
+        //set selectedSphere to new sphere
+        selectedSphere = newSphere;
+        //change color of the new sphere to "selection color"
+        selectedSphere.setColorToSelected();
+
+        //getDataOfTheSphere
+        List<string[]> data = dataReader.readData(selectedSphere.getCode());
+
+        foreach (string[] strs in data)
+        {
+            string line = "";
+            foreach (string str in strs)
+            {
+                line += str + " ";
+            }
+            Debug.Log(line);
+        }
+    }
+
     void InitializeSphereWithXYZ(string code, float x, float y, float z)
     {
         GameObject go = Instantiate(prefab) as GameObject;
@@ -102,16 +130,5 @@ public class SphereManager : MonoBehaviour
         return Mathf.Cos(x * Mathf.PI / 180);
     }
 
-    public void setSelectedSphere(Sphere newSphere)
-    {
-        //change color of the previous sphere to normal
-        if (selectedSphere!=null)
-        {
-            selectedSphere.setColorToNormal();
-        }
-        //set selectedSphere to new sphere
-        selectedSphere = newSphere;
-        //change color of the new sphere to "selection color"
-        selectedSphere.setColorToSelected();
-    }
+    
 }

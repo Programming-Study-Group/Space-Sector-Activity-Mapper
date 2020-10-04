@@ -23,6 +23,11 @@ public class Sphere : MonoBehaviour
         sphereCode = code;
     }
 
+    public string getCode()
+    {
+        return sphereCode;
+    }
+
     public void setColorToNormal()
     {
         if (renderer == null)
