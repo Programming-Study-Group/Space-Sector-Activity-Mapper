@@ -1535,23 +1535,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to demo of the Space Sector Activity Mapper!
-
-
-    In this application,
+  m_Text: "Welcome to demo of the Space Sector Activity Mapper!\n\nIn this application,
     we tried to create a tool with which people can look for space related activities
-    around the world.
-
-
-    This application was developed in two days for Nasa Space
-    Apps Challenge. Therefore we couldn''t spare much time to add data and only data
-    of projects awarded by Nasa in US are included.
-
-
-    You can look around the
-    world by holding the right mouse button and moving your mouse. You can use the
-    scroll bar to the left of the screen and set a year, click on spheres (only placed
-    on US in this demo) to see data.'
+    around the world.\n\nThis application was developed in two days for Nasa Space
+    Apps Challenge. \nWe used SBIR/STTR Data provided by Nasa.\n\nYou can look around
+    the world by holding the right mouse button and moving your mouse. You can use
+    the scroll bar to the left of the screen and set a year, click on spheres (only
+    placed on US in this demo) to see data."
 --- !u!222 &920993543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2601,7 +2591,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 872685715}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.15130185
+  m_Size: 0.15613888
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
